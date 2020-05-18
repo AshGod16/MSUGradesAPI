@@ -51,7 +51,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Documentation</a>
               <a class="dropdown-item" href="#">Technologies</a>
-              <a class="dropdown-item" href="#">Try it out</a>
+              <a class="dropdown-item" href="interactive.html">Try it out</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Credits</a>
             </div>
@@ -69,13 +69,54 @@
             <div class="card-body">
                 <form>
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Enter Course Name</label>
-                    <input type="email" class="form-control" id="courseName" aria-describedby="emailHelp">
+                    <label for="exampleFormControlSelect1">Class Name</label>
+                    <select class="form-control" id="courseName">
+                      <option>MTH</option>
+                      <option>EC</option>
+                      <option>CSE</option>
+                      <option>ISB</option>
+                      <option>IAH</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Enter Course Number</label>
+                    <input type="email" class="form-control" id="courseNumber" aria-describedby="emailHelp">
                   </div>
                   <button type="submit" id="getGrades" class="btn btn-primary" style="background-color: #205c4e; border-color: #205c4e">Submit</button>
                 </form>
+                <br>
+                <hr>
+                <br>
+                <div class="card" id="results" >
+                    <div class="card-title">
+                        Results
+                    </div>
+                    <div class="card-body" id="apiresults">
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+    <br>
+    <footer>
+        <div class="alert alert-success" role="alert">
+            <div class="container">
+                <div class="row">
+                    <div class="col-6">
+                        <a href="contactus.html" class="alert-link">Contact Us</a>
+                    </div>
+                    <div class="col-6">
+                        <a href="#" class="alert-link">Michigan State University</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
