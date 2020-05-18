@@ -31,8 +31,10 @@ Interactive.prototype.communicate = function () {
     course = course.split(' ');
     console.log(course);
 
-    var link = 'http://msu-grades-api.herokuapp.com/grades/' + course[0] +'_' + course[1];
-
+    var link = 'http://127.0.0.1:5000/grades/' + course[0] +'_' + course[1];
+    // msu-grades-api.herokuapp.com
+    debugger;
+    console.log('here');
     // Make ajax call here
     jQuery.ajax({
         url: link,
@@ -42,9 +44,10 @@ Interactive.prototype.communicate = function () {
             console.log(data)
         },
         error: function(xhr, status, error){
-            console.log(error);
+            console.log('error');
         }
     });
+    console.log('here');
 };
 
 const parse_json = function(json) {
