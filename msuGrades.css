@@ -1,0 +1,38 @@
+.hello{
+    background-color: #205c4e !important;
+}
+
+.card-title{
+    padding-left: 1em !important;
+    padding-top: 1em !important;
+    color: #205c4e !important;
+}
+
+.bd-callout {
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    border: 1px solid #eee;
+    border-left-width: .25rem;
+    border-radius: .25rem;
+}
+
+.bd-callout-info {
+    border-color: #205c4e;
+}
+
+.card-body{
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+    padding-top: 1em !important;
+}
+.nav-link{
+    color: white !important;
+}
+#api-navbar{
+    color: white;
+}
+
+.alert{
+    text-align: center !important;
+}
