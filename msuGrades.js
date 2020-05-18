@@ -11,6 +11,7 @@ function Interactive() {
 
     var that = this;
     that.installListener(gradeButton);
+    // jQuery('#results').hide();
 
 };
 
@@ -27,13 +28,10 @@ Interactive.prototype.communicate = function () {
 
     var that = this;
     var course = jQuery('#courseName').val();
-
-    course = course.split(' ');
-    console.log(course);
-
-    var link = 'http://127.0.0.1:5000/grades/' + course[0] +'_' + course[1];
+    var courseNumber = jQuery('#courseNumber').val();
+    var link = 'http://127.0.0.1:5000/grades/' + course +'_' + courseNumber;
     // msu-grades-api.herokuapp.com
-    debugger;
+
     console.log('here');
     // Make ajax call here
     jQuery.ajax({
@@ -41,6 +39,8 @@ Interactive.prototype.communicate = function () {
         method: "GET",
         dataType: 'text',
         success: function (data) {
+            // debugger;
+            jQuery('#apiresults').html(data);
             console.log(data)
         },
         error: function(xhr, status, error){
