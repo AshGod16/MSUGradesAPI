@@ -18,26 +18,26 @@ api.add_resource(Course, "/grades/<string:search>")
 
 @app.route('/')
 def index():
-    fp = open("index.html", "r")
-    return fp.read()
+    with open('index.html.html', 'r') as f:
+        return f.read()
 
 
 @app.route('/contactus')
 def index():
-    fp = open("contactus.html", "r")
-    return fp.read()
+    with open('contactus.html', 'r') as f:
+        return f.read()
 
 
 @app.route('/interactive')
 def index():
-    fp = open("interactive.html", "r")
-    return fp.read()
+    with open('interactive.html', 'r') as f:
+        return f.read()
 
 
 def main():
     from db import db
     db.init_app(app)
-    app.run(port=5000, debug=True)
+    app.run(port=5000, threaded=True)
 
 
 if __name__ == "__main__":
