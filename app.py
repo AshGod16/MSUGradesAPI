@@ -18,7 +18,7 @@ api.add_resource(Course, "/grades/<string:search>")
 
 @app.route('/')
 def index():
-    with open('index.html.html', 'r') as f:
+    with open('index.html', 'r') as f:
         return f.read()
 
 
