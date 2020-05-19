@@ -23,13 +23,13 @@ def index():
 
 
 @app.route('/contactus')
-def index():
+def contactus():
     with open('contactus.html', 'r') as f:
         return f.read()
 
 
 @app.route('/interactive')
-def index():
+def interactive():
     with open('interactive.html', 'r') as f:
         return f.read()
 
