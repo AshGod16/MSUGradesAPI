@@ -36,7 +36,6 @@ Interactive.prototype.communicate = function () {
     // Make ajax call here
     jQuery.ajax({
         url: link,
-        //headers: {  'Access-Control-Allow-Origin': ['http://localhost:63342', 'https://msu-grades-api.herokuapp.com/grades/']},
         method: "GET",
         dataType: 'text',
         success: function (data) {
@@ -59,8 +58,4 @@ const parse_json = function(json) {
     }
 
     return data;
-};
-
-Interactive.prototype.displayJSON = function (data) {
-
-};
+}

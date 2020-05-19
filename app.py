@@ -1,11 +1,11 @@
 from flask import Flask
 from flask_restful import Api
 
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 from resources.course import Course
 
 app = Flask(__name__)
-#CORS(app)
+CORS(app)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///grades.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -34,7 +34,6 @@ def interactive():
         return f.read()
 
 
-# @cross_origin(headers=['https://msu-grades-api.herokuapp.com'])
 def main():
     from db import db
     db.init_app(app)
