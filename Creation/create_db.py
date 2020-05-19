@@ -3,7 +3,7 @@ import csv
 
 
 def main():
-    connection = sqlite3.connect("grades.db")
+    connection = sqlite3.connect("./grades.db")
     cursor = connection.cursor()
     create_table = "CREATE TABLE grades (id INTEGER PRIMARY KEY , term text, subject text, code int, title text,"\
                    " instructor text, total int, average real, four int, threefive int," \
@@ -11,7 +11,7 @@ def main():
                    " int, incomplete int, withdrawn int, passed int, nograde int);"
     cursor.execute(create_table)
     insert_query = "INSERT INTO grades VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"
-    fp = open("MSUGradesMaster.csv")
+    fp = open("Creation/MSUGradesMaster.csv")
     reader = csv.reader(fp)
     entries = []
     i = 1
