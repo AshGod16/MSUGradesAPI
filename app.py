@@ -42,11 +42,6 @@ def interactive():
     #     return f.read()
 
 
-@app.route('/grades')
-def grades():
-    return
-
-
 def main():
     from db import db
     db.init_app(app)
