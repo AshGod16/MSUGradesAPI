@@ -29,7 +29,8 @@ Interactive.prototype.communicate = function () {
     var that = this;
     var course = jQuery('#courseName').val();
     var courseNumber = jQuery('#courseNumber').val();
-    var link = 'https://cors-anywhere.herokuapp.com/http://msu-grades-api.herokuapp.com/grades/' + course +'_' + courseNumber;
+    var link = 'http://msu-grades-api.herokuapp.com/grades/' + course +'_' + courseNumber;
+    // https://cors-anywhere.herokuapp.com/
     // msu-grades-api.herokuapp.com
 
     console.log('here');
