@@ -16,11 +16,29 @@ api = Api(app)
 api.add_resource(Course, "/grades/<string:search>")
 
 
+@app.route('/')
+def index():
+    with open('index.html', 'r') as f:
+        return f.read()
+
+
+@app.route('/contactus')
+def contactus():
+    with open('contactus.html', 'r') as f:
+        return f.read()
+
+
+@app.route('/interactive')
+def interactive():
+    with open('interactive.html', 'r') as f:
+        return f.read()
+
+
 @cross_origin(headers=['https://msu-grades-api.herokuapp.com/'])
 def main():
     from db import db
     db.init_app(app)
-    app.run(port=5000, debug=True)
+    app.run(port=5000, threaded=True)
 
 
 if __name__ == "__main__":
