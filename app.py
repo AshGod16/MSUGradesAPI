@@ -16,6 +16,24 @@ api = Api(app)
 api.add_resource(Course, "/grades/<string:search>")
 
 
+@app.route('/')
+def index():
+    fp = open("index.html", "r")
+    return fp.read()
+
+
+@app.route('/contactus')
+def index():
+    fp = open("contactus.html", "r")
+    return fp.read()
+
+
+@app.route('/interactive')
+def index():
+    fp = open("interactive.html", "r")
+    return fp.read()
+
+
 def main():
     from db import db
     db.init_app(app)
