@@ -2,6 +2,7 @@ Flask
 Flask-RESTful
 Flask-SQLAlchemy
 flask_cors
+flask_assets
 uwsgi
 Click==7.0
 gunicorn==19.9.0

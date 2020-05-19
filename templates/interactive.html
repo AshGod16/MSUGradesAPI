@@ -1,16 +1,21 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
+    <head>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <script>
+        window.onload = function () {
+            new Interactive();
+        }
+    </script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/395f42db85.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="msuGrades.css">
-    <script src="msuGrades.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap" rel="stylesheet">
     <style>
         body {
@@ -18,16 +23,14 @@
             sans-serif;
         }
     </style>
-    <script>
 
-        window.onload = function (){
-            new msuGrades();
-        }
-
-    </script>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/msuGrades.css')}}">
+        <script type="text/javascript" src="{{url_for('static', filename='js/msuGrades.js')}}"></script>
+        <!--    <link rel="stylesheet" href="msuGrades.css">-->
+<!--    <script src="msuGrades.js"></script>-->
     <title>MSU Grades API</title>
-  </head>
-  <body>
+</head>
+<body>
     <nav class="hello navbar navbar-expand-lg navbar-light bg-light">
       <!-- <a class="navbar-brand" href="#">Navbar</a> -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -52,7 +55,7 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="#">Documentation</a>
               <a class="dropdown-item" href="#">Technologies</a>
-              <a class="dropdown-item" href="interactive.html">Try it out</a>
+              <a class="dropdown-item" href="/interactive">Try it out</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Credits</a>
             </div>
@@ -67,37 +70,40 @@
     <br>
     <div class="container">
         <div class="card">
-            <h1 class="card-title" ><strong>MSU Grades API</strong></h1>
             <div class="card-body">
-                <p>This API aims to be useful to those who wish to use the data from MSU grades for their application.</p>
+                <form>
+                  <div class="form-group">
+                    <label>Class Name</label>
+                    <select class="form-control" id="courseName">
+                      <option>MTH</option>
+                      <option>EC</option>
+                      <option>CSE</option>
+                      <option>ISB</option>
+                      <option>IAH</option>
+                    </select>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Enter Course Number</label>
+                    <input type="email" class="form-control" id="courseNumber" aria-describedby="emailHelp">
+                  </div>
+                  <button type="submit" id="getGrades" class="btn btn-primary" style="background-color: #205c4e; border-color: #205c4e">Submit</button>
+                </form>
+                <br>
                 <hr>
                 <br>
-                <div class="card">
-                    <h3 class="card-title" ><strong>Documentation</strong></h3>
-                    <div class="card-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-                            dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                            ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                mollit anim id est laborum.</p>
-                        <hr>
-                        <p>Example request to API</p>
-                        <div class="bd-callout bd-callout-info">
-                            <code>Example Request</code>
-                        </div>
-
-                        <br>
-                        <p>Example result from API</p>
-                        <div class="bd-callout bd-callout-info">
-                            <code>Example Result</code>
-                        </div>
+                <div class="card" id="results" >
+                    <div class="card-title">
+                        Results
+                    </div>
+                    <div class="card-body" id="apiresults">
 
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
+
     <br>
     <footer>
         <div class="alert alert-success" role="alert">
@@ -114,14 +120,7 @@
 
         </div>
     </footer>
-
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+</body>
 </html>
