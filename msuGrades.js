@@ -29,13 +29,15 @@ Interactive.prototype.communicate = function () {
     var that = this;
     var course = jQuery('#courseName').val();
     var courseNumber = jQuery('#courseNumber').val();
-    var link = 'https://cors-anywhere.herokuapp.com/http://msu-grades-api.herokuapp.com/grades/' + course +'_' + courseNumber;
+    // var link = 'https://cors-anywhere.herokuapp.com/http://msu-grades-api.herokuapp.com/grades/' + course +'_' + courseNumber;
+    var link = 'https://msu-grades-api.herokuapp.com/grades/' + course +'_' + courseNumber;
     // msu-grades-api.herokuapp.com
 
     console.log('here');
     // Make ajax call here
     jQuery.ajax({
         url: link,
+        //headers: {  'Access-Control-Allow-Origin': ['http://localhost:63342', 'https://msu-grades-api.herokuapp.com/grades/']},
         method: "GET",
         dataType: 'text',
         success: function (data) {
@@ -58,4 +60,8 @@ const parse_json = function(json) {
     }
 
     return data;
-}
+};
+
+Interactive.prototype.displayJSON = function (data) {
+
+};
