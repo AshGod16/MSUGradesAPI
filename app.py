@@ -34,7 +34,7 @@ def interactive():
         return f.read()
 
 
-@cross_origin(headers=['https://msu-grades-api.herokuapp.com/'])
+#  @cross_origin(headers=['https://msu-grades-api.herokuapp.com'])
 def main():
     from db import db
     db.init_app(app)
