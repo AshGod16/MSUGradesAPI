@@ -89,7 +89,7 @@ Interactive.prototype.communicate = function (years, semesters) {
             jQuery('#errormsg').html("Incorrect combination of semester and year").fadeIn(500).fadeOut(500);
         }
         else {
-            link += course + '_' + courseNumber + '_' + semesters[semester]+years[year];
+            link += course + '_' + courseNumber + '_' + semesters.get(semester)+years.get(year);
         }
     }
 
