@@ -28,6 +28,7 @@ function Interactive() {
     var that = this;
     that.installListener(gradeButton);
 
+    debugger;
     var semesters = new Map();
     semesters.set('Fall', 'FS');
     semesters.set('Spring', 'SS');
