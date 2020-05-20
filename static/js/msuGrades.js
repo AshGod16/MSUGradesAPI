@@ -26,18 +26,20 @@ function Interactive() {
     var gradeButton = jQuery('#getGrades');
 
     var that = this;
-    that.installListener(gradeButton);
+
 
     debugger;
     var semesters = new Map();
+    semesters.set("All", "");
     semesters.set('Fall', 'FS');
     semesters.set('Spring', 'SS');
     semesters.set('Summer', 'US');
     // jQuery('#results').hide();
 
-    var years = [];
+    var years = new Map();
+    years.set("All", "");
     for(var i = 2011; i <= 2020; i ++ ){
-        years.push(i);
+        years.set(i, i.toString().slice(-2));
     };
 
     var semester_select = jQuery('#semesters');
@@ -49,28 +51,49 @@ function Interactive() {
 
     var year_select = jQuery('#years');
     str = "";
-    for(var year = 0; year < years.length; year++){
-        str += '<option>' + years[year] + '</option>';
+    for(const [key, value] of years.entries()){
+        str += '<option>' + key + '</option>';
     }
     year_select.html(str);
 
+    that.installListener(gradeButton, years, semesters);
+
 };
 
-Interactive.prototype.installListener = function(gradeButton){
+Interactive.prototype.installListener = function(gradeButton, years, semesters){
     var that = this;
     gradeButton.click(function (event) {
         event.preventDefault();
         console.log('Hello from Interactive');
-        that.communicate();
+        that.communicate(years, semesters);
     });
 };
 
-Interactive.prototype.communicate = function () {
+Interactive.prototype.communicate = function (years, semesters) {
 
     var that = this;
+
     var course = jQuery('#courseName').val();
     var courseNumber = jQuery('#courseNumber').val();
-    var link = 'https://msu-grades-api.herokuapp.com/grades/' + course +'_' + courseNumber;
+    var semester = jQuery('#semesters').val();
+    var year = jQuery('#years').val();
+
+    var link = 'https://msu-grades-api.herokuapp.com/grades/';
+    // var input_list = [course, courseNumber, semesters[semester]+years[year]];
+
+    if(semester === 'All'){
+        link += course +'_' + courseNumber;
+    }
+    else{
+        if(year === 'All'){
+            jQuery('#errormsg').html("Incorrect combination of semester and year").fadeIn(500).fadeOut(500);
+        }
+        else {
+            link += course + '_' + courseNumber + '_' + semesters[semester]+years[year];
+        }
+    }
+
+
     // https://cors-anywhere.herokuapp.com/
     // msu-grades-api.herokuapp.com
 
