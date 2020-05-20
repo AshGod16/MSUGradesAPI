@@ -61,11 +61,12 @@ Interactive.prototype.communicate = function () {
         dataType: 'JSON',
         success: function (data) {
             // debugger;
-            jQuery('#apiresults').html(JSON.stringify(data, null, 2));
+            jQuery('#apiresults').html("URL: "+link+"\n"+JSON.stringify(data, null, 2));
+            //jQuery('#apiresults').html(JSON.stringify(data, null, 2));
             console.log(data);
         },
         error: function(xhr, status, error){
-            jQuery('#apiresults').html("Please check your input again. Remember to include only the \n class name(MTH, EC, CSE, etc.) in the Course Name field");
+            jQuery('#apiresults').html("Course not found. \n Please check your input again. Remember to include only the class name(MTH, EC, CSE, etc.) in the Course Name field");
             console.log('error');
         }
     });
