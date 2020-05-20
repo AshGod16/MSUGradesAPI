@@ -2,6 +2,19 @@ const msuGrades = function(){
     console.log('here');
     jQuery('.hello').css('color', 'white');
 
+    var code = "jQuery.ajax({\n" +
+        "    url: https://msu-grades-api.herokuapp.com/grades/CSE_325,\n" +
+        "    method: 'GET'," +
+        "    dataType: 'text'," +
+        "    success: function (data) {\n" +
+        "        console.log(data) // The data received from the api\n" +
+        "    },\n" +
+        "    error: function(xhr, status, error){\n" +
+        "        console.log('error');\n" +
+        "    }\n" +
+        "});";
+    console.log(here);
+    jQuery('#ajaxrequest').html(code);
     jQuery()
 };
 
