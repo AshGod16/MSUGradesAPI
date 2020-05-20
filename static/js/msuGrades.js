@@ -5,7 +5,7 @@ const msuGrades = function(){
     var code = "jQuery.ajax({\n" +
         "    url: 'https://msu-grades-api.herokuapp.com/grades/CSE_325',\n" +
         "    method: 'GET',\n" +
-        "    dataType: 'text',\n" +
+        "    dataType: 'JSON',\n" +
         "    success: function (data) {\n" +
         "        console.log(data) // The data received from the api\n" +
         "    },\n" +
