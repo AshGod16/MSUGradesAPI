@@ -41,3 +41,8 @@ table tr th,td{
     padding-top: 0;
     padding-bottom:0;
 }
+
+.sub-heading{
+    font-size: 1.25em !important;
+    color: #205c4e;
+}
