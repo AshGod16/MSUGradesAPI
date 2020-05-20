@@ -4,8 +4,8 @@ const msuGrades = function(){
 
     var code = "jQuery.ajax({\n" +
         "    url: https://msu-grades-api.herokuapp.com/grades/CSE_325,\n" +
-        "    method: 'GET'," +
-        "    dataType: 'text'," +
+        "    method: 'GET',\n" +
+        "    dataType: 'text',\n" +
         "    success: function (data) {\n" +
         "        console.log(data) // The data received from the api\n" +
         "    },\n" +
@@ -13,9 +13,15 @@ const msuGrades = function(){
         "        console.log('error');\n" +
         "    }\n" +
         "});";
-    console.log(here);
-    jQuery('#ajaxrequest').html(code);
-    jQuery()
+
+    console.log(typeof(code));
+
+    jQuery('#ajaxrequest').html(code)//.val(code);
+
+    var result = {"courses": [{"term": "SS20", "subject": "CSE", "code": 325, "title": "Computer Systems", "instructor": "MCCULLEN,MARK H", "total": 183, "average": 2.546448087, "four": 37, "threefive": 17, "three": 29, "twofive": 32, "two": 28, "onefive": 17, "one": 10, "zero": 13, "incomplete": 0, "withdrawn": 0, "passed": 0, "nograde": 0}, {"term": "FS19", "subject": "CSE", "code": 325, "title": "Computer Systems", "instructor": "MCCULLEN,MARK H", "total": 188, "average": 2.401595745, "four": 29, "threefive": 19, "three": 24, "twofive": 28, "two": 43, "onefive": 18, "one": 14, "zero": 13, "incomplete": 1, "withdrawn": 1, "passed": 0, "nograde": 0}]};
+
+    jQuery('#results').html(JSON.stringify(result, null, 2));
+    //jQuery()
 };
 
 

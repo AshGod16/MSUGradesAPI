@@ -23,12 +23,14 @@
         window.onload = function (){
             new msuGrades();
         }
-
     </script>
+
+      <!--<link rel="stylesheet" type="text/css" href="../static/styles/msuGrades.css">
+      <script type="text/javascript" src="../static/js/msuGrades.js"></script>-->
+
       <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/msuGrades.css')}}">
       <script type="text/javascript" src="{{url_for('static', filename='js/msuGrades.js')}}"></script>
-<!--      <link rel="stylesheet" href="msuGrades.css">-->
-<!--      <script type="text/javascript"src="{{ ASSET_URL }}"></script>-->
+
     <title>MSU Grades API</title>
   </head>
   <body>
@@ -92,7 +94,7 @@
                         <br>
                         <p><strong>Example result from API:</strong></p>
                         <div class="bd-callout bd-callout-info">
-                            <code>Example Result</code>
+                            <pre style="color:#e83e8c;"><code id="results">Example Result</code></pre>
                         </div>
 
                     </div>
