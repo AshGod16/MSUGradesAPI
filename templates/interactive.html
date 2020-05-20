@@ -79,6 +79,16 @@
                     <label>Enter Course Number</label>
                     <input type="text" class="form-control" id="courseNumber">
                   </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                          <label for="semesters">Example select</label>
+                          <select class="form-control" id="semesters" style="border-color: #205c4e !important;"></select>
+                        </div>
+                        <div class="form-group col-md-6">
+                          <label for="years">Year</label>
+                            <select class="form-control" id="years" style="border-color: #205c4e !important;"></select>
+                        </div>
+                    </div>
                   <button type="submit" id="getGrades" class="btn btn-primary" style="background-color: #205c4e; border-color: #205c4e">Submit</button>
                 </form>
                 <br>
@@ -90,7 +100,15 @@
                     </div>
                     <div class="card-body" style="padding-top: 0 !important ;">
                         <div class="bd-callout bd-callout-info">
-                            <pre style="color:#e83e8c;"><code id="apiresults">Result will be shown here</code></pre>
+                            <div id="url">The request url will be displayed here</div>
+                        </div>
+                        <br>
+                        <div class="bd-callout bd-callout-info">
+                            <div ><pre style="color:#e83e8c"><code id="ajaxcall">The Ajax call for the above request will be displayed here </code></pre></div>
+                        </div>
+                        <br>
+                        <div class="bd-callout bd-callout-info">
+                            <pre style="color:#e83e8c;"><code id="apiresults">The API Result will be displayed here</code></pre>
                         </div>
                     </div>
                 </div>
