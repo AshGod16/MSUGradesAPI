@@ -86,10 +86,10 @@ Interactive.prototype.communicate = function (years, semesters) {
     }
     else{
         if(year === 'All'){
-            jQuery('#errormsg').html("Incorrect combination of semester and year").fadeIn(500).fadeOut(500);
+            jQuery('#errormsg').html("Incorrect combination of semester and year").fadeIn(1000).fadeOut(1000);
         }
         else {
-            link += course + '_' + courseNumber + '_' + semesters.get(semester)+years.get(year);
+            link += course + '_' + courseNumber + '_' + semesters.get(semester)+years.get(Number(year));
         }
     }
 
