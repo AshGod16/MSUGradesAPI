@@ -65,6 +65,7 @@ Interactive.prototype.communicate = function () {
             console.log(data);
         },
         error: function(xhr, status, error){
+            jQuery('#apiresults').html("Please check your input again. Remember to include only the \n class name(MTH, EC, CSE, etc.) in the Course Name field");
             console.log('error');
         }
     });

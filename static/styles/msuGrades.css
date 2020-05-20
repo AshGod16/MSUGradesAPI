@@ -46,3 +46,7 @@ table tr th,td{
     font-size: 1.25em !important;
     color: #205c4e;
 }
+
+.bd-callout-info pre{
+    margin-bottom: 0; !important;
+}
