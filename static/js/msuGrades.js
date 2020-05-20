@@ -42,15 +42,15 @@ function Interactive() {
 
     var semester_select = jQuery('#semesters');
     var str = "";
-    for(var sem in semesters){
-        str += '<option>' + sem + '</option>';
+    for(const [key, value] of semesters.entries()){
+        str += '<option>' + key + '</option>';
     }
     semester_select.html(str);
 
     var year_select = jQuery('#years');
     str = "";
-    for(var year in years){
-        str += '<option>' + year + '</option>';
+    for(var year = 0; year < years.length; year++){
+        str += '<option>' + years[year] + '</option>';
     }
     year_select.html(str);
 
