@@ -61,7 +61,7 @@ Interactive.prototype.communicate = function () {
         dataType: 'JSON',
         success: function (data) {
             // debugger;
-            jQuery('#apiresults').html(JSON.stringify(data));
+            jQuery('#apiresults').html(JSON.stringify(data, null, 2));
             console.log(data);
         },
         error: function(xhr, status, error){
