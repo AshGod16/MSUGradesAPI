@@ -58,11 +58,11 @@ Interactive.prototype.communicate = function () {
     jQuery.ajax({
         url: link,
         method: "GET",
-        dataType: 'text',
+        dataType: 'JSON',
         success: function (data) {
             // debugger;
             jQuery('#apiresults').html(JSON.stringify(data));
-            console.log(data)
+            console.log(data);
         },
         error: function(xhr, status, error){
             console.log('error');
