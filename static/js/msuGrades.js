@@ -74,7 +74,9 @@ Interactive.prototype.communicate = function (years, semesters) {
 
     // var link = 'https://msu-grades-api.herokuapp.com/grades/';  // The initial link
 
-    var link = 'http://127.0.0.1:5000/grades/';
+    // var link = 'http://127.0.0.1:5000/grades/';
+
+    var link = 'http://3.14.6.168/grades/';
 
     if(course === "" || courseNumber === ""){
         jQuery('#errormsg').html("Do not leave the Course Name or Course Number field blank.").fadeIn(1000).fadeOut(3000);
