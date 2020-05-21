@@ -2,7 +2,7 @@ const msuGrades = function(){
     jQuery('.hello').css('color', 'white');
 
     var code = "jQuery.ajax({\n" +
-        "    url: 'https://msugradesapi/grades/CSE_325',\n" +
+        "    url: 'https://msugradesapi.com/grades/CSE_325',\n" +
         "    method: 'GET',\n" +
         "    dataType: 'JSON',\n" +
         "    success: function (data) {\n" +
