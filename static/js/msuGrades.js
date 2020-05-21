@@ -111,7 +111,7 @@ Interactive.prototype.communicate = function (years, semesters) {
         success: function (data) {
 
             // Displaying the data in the respective divs
-            jQuery('#url').html('<strong style="color: #205c4e; font-size: 1.15em !important;">URL: </strong>\n'+ link);
+            jQuery('#url').html('<strong style="color: #205c4e; font-size: 1.15em !important;">URL: </strong>\n\n'+ link);
             jQuery('#ajaxcall').html('<strong style="color: #205c4e; font-size: 1.15em !important;">Ajax call for above request: </strong>\n\n' + code);
             jQuery('#apiresults').html('<strong style="color: #205c4e; font-size: 1.15em !important;">Result from API:</strong> \n\n' + JSON.stringify(data, null, 2));
         },
