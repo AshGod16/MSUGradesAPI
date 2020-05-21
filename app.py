@@ -45,7 +45,7 @@ def interactive():
 def main():
     from db import db
     db.init_app(app)
-    app.run(port=5000, threaded=True)
+    app.run(host="0.0.0.0", port=5000, threaded=True, debug=True)
 
 
 if __name__ == "__main__":
