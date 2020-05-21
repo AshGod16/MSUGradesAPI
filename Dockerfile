@@ -6,7 +6,7 @@ RUN mkdir /msugradesapi
 WORKDIR /msugradesapi
 COPY . /msugradesapi/
 
+RUN pip3 install gunicorn3
 RUN pip3 install -r requirements.txt
 
-
-EXPOSE 8000
+CMD ['gunicorn3', '-b', "0.0.0.0:8000", "app:app", "--workers=5"]
