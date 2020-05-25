@@ -9,6 +9,7 @@ services:
       - "8000:8000"
       - "443:443"
     network_mode: host
+    restart: always
 
   nginx:
     build: ./nginx
