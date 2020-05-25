@@ -7,6 +7,7 @@ services:
       - .:/msugradesapi
     ports:
       - "8000:8000"
+      - "443:443"
     network_mode: host
 
   nginx:
