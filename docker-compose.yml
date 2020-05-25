@@ -6,7 +6,7 @@ services:
     volumes:
       - .:/msugradesapi
     ports:
-      - "80:80"
+      - "8000:8000"
     network_mode: host
     restart: always
 
@@ -18,7 +18,7 @@ services:
     restart: always
     network_mode: host
     ports:
-      - "80:80"
+      - "8000:8000"
       - "443:443"
     volumes:
       - ./certs:/etc/nginx/certs
