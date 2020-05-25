@@ -16,3 +16,7 @@ services:
       - SERVER_NAME=3.14.6.168
     restart: always
     network_mode: host
+    ports:
+      - "443:443"
+    volumes:
+      - ./certs:/etc/nginx/certs
