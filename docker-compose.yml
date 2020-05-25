@@ -6,7 +6,7 @@ services:
     volumes:
       - .:/msugradesapi
     ports:
-      - "8000:443"
+      - "80:80"
     network_mode: host
     restart: always
 
