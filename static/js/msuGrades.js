@@ -1,5 +1,4 @@
 const msuGrades = function(){
-    console.log("hello world");
     jQuery('.hello').css('color', 'white');
 
     var code = "jQuery.ajax({\n" +
