@@ -122,12 +122,16 @@ Interactive.prototype.communicate = function (years, semesters) {
             jQuery('#url').html('<strong style="color: #205c4e; font-size: 1.15em !important;">URL: </strong>\n\n'+ link);
             jQuery('#ajaxcall').html('<strong style="color: #205c4e; font-size: 1.15em !important;">Ajax call for above request: </strong>\n\n' + code);
             jQuery('#apiresults').html('<strong style="color: #205c4e; font-size: 1.15em !important;">Result from API:</strong> \n\n' + JSON.stringify(data, null, 2));
+            jQuery('#apiresults').css('height', '500px');
+            jQuery('#apiresults').css('overflow-y', 'auto');
         },
         error: function(xhr, status, error){
 
             // Error message
-            jQuery('#apiresults').html("Course not found. \n Please check your input again. Remember to include only the class name(MTH, EC, CSE, etc.) in the Course Name field. \n \
+            if(courseNumber !== "" && course !== ""){
+                jQuery('#apiresults').html("Course not found. \n Please check your input again. Remember to include only the class name(MTH, EC, CSE, etc.) in the Course Name field. \n \
             Also note that the entered year might not exist for the given class. \n For example, CSE 325 has only been taught in 2019 and 2020. Double-check that you entered the year correctly.");
+            }
         }
     });
 };
