@@ -24,28 +24,23 @@ api.add_resource(Course, "/grades/<string:search>")
 @app.route('/')
 def index():
     return render_template("index.html")
-    # with open('templates/index.html', 'r') as f:
-    #     return f.read()
 
 
 @app.route('/contactus')
 def contactus():
     return render_template("contactus.html")
-    # with open('templates/contactus.html', 'r') as f:
-    #     return f.read()
 
 
 @app.route('/interactive')
 def interactive():
     return render_template("interactive.html")
-    # with open('templates/interactive.html', 'r') as f:
-    #     return f.read()
 
 
 def main():
     from db import db
     db.init_app(app)
-    app.run(host="3.14.6.168", port=8000, threaded=True)
+    app.run(host="3.14.6.168", port=8000, threaded=True)  # <- for actual production
+    # app.run(threaded=True) #  <-for local testing
 
 
 if __name__ == "__main__":
