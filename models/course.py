@@ -56,11 +56,13 @@ class CourseModel(db.Model):
 
     @classmethod
     def find_by_course(cls, search):
-        query = "SELECT * FROM grades WHERE term="+search['term']+"" \
-                " AND subject = "+search['subject']+" AND code="+search['code']
+        # query = "SELECT * FROM grades WHERE term="+search['term']+"" \
+        #         " AND subject = "+search['subject']+" AND code="+search['code']
+        query = "SELECT * FROM grades WHERE term=? AND subject = ? AND code= ?"
+        inp = (search['term'], search['subject'], search['code'])
         connection = sqlite3.connect("grades.db")
         cursor = connection.cursor()
-        cursor.execute(query)
+        cursor.execute(query, inp)
         courses = cursor.fetchall()
         json = {'courses': []}
         for course in courses:
