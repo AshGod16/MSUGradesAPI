@@ -83,6 +83,9 @@ Interactive.prototype.communicate = function (years, semesters) {
     else if(course.length < 2 || 4 < course.length){
         jQuery('#errormsg').html("Course Name must be between 2 to 4 characters long.").fadeIn(1000).fadeOut(3000);
     }
+    else if (!/^[a-z]+$/i.test(course)){
+        jQuery('#errormsg').html("Course Name must not contain numbers").fadeIn(1000).fadeOut(3000);
+    }
     else if (isNaN(courseNumber)){
         jQuery('#errormsg').html("Course Number must be a number.").fadeIn(1000).fadeOut(3000);
     }
