@@ -80,6 +80,12 @@ Interactive.prototype.communicate = function (years, semesters) {
     if(course === "" || courseNumber === ""){
         jQuery('#errormsg').html("Do not leave the Course Name or Course Number field blank.").fadeIn(1000).fadeOut(3000);
     }
+    else if(course.length < 2 || 4 < course.length){
+        jQuery('#errormsg').html("Course Name must be between 2 to 4 characters long.").fadeIn(1000).fadeOut(3000);
+    }
+    else if (isNaN(courseNumber)){
+        jQuery('#errormsg').html("Course Number must be a number.").fadeIn(1000).fadeOut(3000);
+    }
     // Rules for constructing the API call
     else if(semester === 'All'){
         link += course +'_' + courseNumber;
