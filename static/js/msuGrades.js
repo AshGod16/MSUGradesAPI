@@ -67,14 +67,12 @@ Interactive.prototype.communicate = function (years, semesters) {
 
     var that = this;
 
-    var course = jQuery('#courseName').val();
-    var courseNumber = jQuery('#courseNumber').val();
+    var course = jQuery('#courseName').val().trim();
+    var courseNumber = jQuery('#courseNumber').val().trim();
     var semester = jQuery('#semesters').val();
     var year = jQuery('#years').val();  // Gather all the data from the input fields
 
     var validated = false;
-    // var link = 'https://msu-grades-api.herokuapp.com/grades/';  // The initial link
-    // var link = 'http://127.0.0.1:5000/grades/';
 
     var link = 'https://www.msugradesapi.com/grades/';
 
