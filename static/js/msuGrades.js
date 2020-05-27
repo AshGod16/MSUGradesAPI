@@ -91,7 +91,7 @@ Interactive.prototype.communicate = function (years, semesters) {
     // Rules for constructing the API call
     else if(semester === 'All'){
         if(year !== 'All'){
-            jQuery('#errormsg').html("You must either select both, a semester and a year, or select All for both options.").fadeIn(1000).fadeOut(4000);
+            jQuery('#errormsg').html("You must either select both, a semester and a year, or select All for both options.").fadeIn(1000).fadeOut(6000);
         }
         else{
             link += course +'_' + courseNumber;
@@ -100,7 +100,7 @@ Interactive.prototype.communicate = function (years, semesters) {
     }
     else{
         if(year === 'All'){
-            jQuery('#errormsg').html("You must either select both, a semester and a year, or select All for both options.").fadeIn(1000).fadeOut(4000);
+            jQuery('#errormsg').html("You must either select both, a semester and a year, or select All for both options.").fadeIn(1000).fadeOut(6000);
         }
         else {
             link += course + '_' + courseNumber + '_' + semesters.get(semester)+years.get(Number(year));
