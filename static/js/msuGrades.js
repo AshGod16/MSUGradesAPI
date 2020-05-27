@@ -124,9 +124,9 @@ Interactive.prototype.communicate = function (years, semesters) {
             // Displaying the data in the respective divs
             jQuery('#url').html('<strong style="color: #205c4e; font-size: 1.15em !important;">URL: </strong>\n\n'+ link);
             jQuery('#ajaxcall').html('<strong style="color: #205c4e; font-size: 1.15em !important;">Ajax call for above request: </strong>\n\n' + code);
+            jQuery('#apidiv').css('height', '500px');
+            jQuery('#apidiv').css('overflow-y', 'auto');
             jQuery('#apiresults').html('<strong style="color: #205c4e; font-size: 1.15em !important;">Result from API:</strong> \n\n' + JSON.stringify(data, null, 2));
-            jQuery('#apiresults').css('height', '500px');
-            jQuery('#apiresults').css('overflow-y', 'auto');
         },
         error: function(xhr, status, error){
 
