@@ -72,6 +72,7 @@ Interactive.prototype.communicate = function (years, semesters) {
     var semester = jQuery('#semesters').val();
     var year = jQuery('#years').val();  // Gather all the data from the input fields
 
+    var validated = false;
     // var link = 'https://msu-grades-api.herokuapp.com/grades/';  // The initial link
     // var link = 'http://127.0.0.1:5000/grades/';
 
@@ -92,6 +93,7 @@ Interactive.prototype.communicate = function (years, semesters) {
     // Rules for constructing the API call
     else if(semester === 'All'){
         link += course +'_' + courseNumber;
+        validated = true;
     }
     else{
         if(year === 'All'){
@@ -99,6 +101,7 @@ Interactive.prototype.communicate = function (years, semesters) {
         }
         else {
             link += course + '_' + courseNumber + '_' + semesters.get(semester)+years.get(Number(year));
+            validated = true;
         }
     }
 
@@ -131,9 +134,8 @@ Interactive.prototype.communicate = function (years, semesters) {
         error: function(xhr, status, error){
 
             // Error message
-            if(courseNumber !== "" && course !== ""){
-                jQuery('#apiresults').html("Course not found. \n Please check your input again. Remember to include only the class name(MTH, EC, CSE, etc.) in the Course Name field. \n \
-            Also note that the entered year might not exist for the given class. \n For example, CSE 325 has only been taught in 2019 and 2020. Double-check that you entered the year correctly.");
+            if(validated === true){
+                jQuery('#apiresults').html("Course not found.\nPlease check your input again. Remember to include only the class name(MTH, EC, CSE, etc.) in the Course Name field.\nAlso note that the entered year might not exist for the given class.\nFor example, CSE 325 has only been taught in 2019 and 2020. Double-check that you entered the year correctly.");
             }
         }
     });
